@@ -46,13 +46,13 @@
   
   <div class="container">
   	<div class="row" style="border-bottom: 1px solid; margin-bottom: 30px;">
-  		<div class="col-md-4">
-    	<video name='reply' controls width='330px' height='270px'>
+  		<div class="col-md-4 ">
+    	<video name='reply' controls width='330px' height='270px' style="vertical-align:bottom;">
 			<source src="http://d2crtr3mlev64q.cloudfront.net/{{s.filename}}" type="video/mp4"></source>
 		</video>
 		</div>
 		<div class="clearfix visible-xs"></div>
-		<div class="col-md-8" style="vertical-align:bottom;">
+		<div class="col-md-8" >
 		<p>Post your reply (*.mp4 vedio only)</p>
 		<form  class="navbar-form navbar-left" action='/{{s.id}}/handlefile/' method="POST" enctype="multipart/form-data">
     	{% csrf_token %}
