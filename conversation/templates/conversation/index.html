@@ -21,18 +21,44 @@
   </head>
 
   <body style="">
-    <form action='/{{s.id}}/handlefile/' method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
-  	  <input type="file" name="file" /><br/>
-	  <input type="submit" value="post reply" />
-    </form>
-    <video name='reply' controls width='20%' height='15%'>
-	<source src="http://d2crtr3mlev64q.cloudfront.net/{{s.filename}}" type="video/mp4"></source>
-	</video>
-	<p>reply:</p>
-    {% for p in all_p %}
-        <video name='reply' controls width='20%' height='15%'>
-		<source src="http://d2crtr3mlev64q.cloudfront.net/{{p.filename}}" type="video/mp4"></source>
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+  	<div class="container">
+    	<div class="navbar-header">
+        	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          	</button>
+          	<a class="navbar-brand" href="/">Twittube</a>
+        </div>
+  	</div>
+  </div>
+  
+  <div class="container">
+  	<div class="row">
+    	<video name='reply' controls width='20%' height='15%'>
+			<source src="http://d2crtr3mlev64q.cloudfront.net/{{s.filename}}" type="video/mp4"></source>
 		</video>
+		<p>Post your reply (*.mp4 vedio only)</p>
+		<form  class="navbar-form navbar-left" action='/{{s.id}}/handlefile/' method="POST" enctype="multipart/form-data">
+    	{% csrf_token %}
+    		<div class="form-group">
+  	  			<input type="file" class="form-control" name="file" /><br/>
+  	  		</div>
+	 		<input type="submit" class="btn btn-default" value="Upload">
+    	</form>
+    </div>
+	<p>reply:</p>
+	
+    {% for p in all_p %}
+    <div class="col-md-4">
+   		<div class="thumbnail">
+        	<video name='reply' controls width='330px' height='270px'>
+				<source src="http://d2crtr3mlev64q.cloudfront.net/{{p.filename}}" type="video/mp4"></source>
+			</video>
+		</div>
+	</div>
     {% endfor %} 
+  </div>
 </body></html>
