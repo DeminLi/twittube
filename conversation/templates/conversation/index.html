@@ -46,9 +46,12 @@
   
   <div class="container">
   	<div class="row">
-    	<video name='reply' controls width='20%' height='15%'>
+  		<div class="col-md-4">
+    	<video name='reply' controls width='80%' height='50%'>
 			<source src="http://d2crtr3mlev64q.cloudfront.net/{{s.filename}}" type="video/mp4"></source>
 		</video>
+		</div>
+		<div class="col-md-8">
 		<p>Post your reply (*.mp4 vedio only)</p>
 		<form  class="navbar-form navbar-left" action='/{{s.id}}/handlefile/' method="POST" enctype="multipart/form-data">
     	{% csrf_token %}
@@ -57,8 +60,8 @@
   	  		</div>
 	 		<input type="submit" class="btn btn-default" value="Upload">
     	</form>
+    	</div">
     </div>
-	<p>reply:</p>
 	
     {% for p in all_p %}
     <div class="col-md-4">
