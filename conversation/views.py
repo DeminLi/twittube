@@ -36,8 +36,25 @@ def handlefile(request, sponsor_id):
             p.save()
             s.next_int_num += 1
             s.save()
-            
-            default_storage.save(filename, request.FILES['file'])
+            originalname=request.FILES['file'].name
+            tempname = "temp."+originalname.split(',')[-1]
+            default_storage.save(tempname, request.FILES['file'])
+            transcode = boto.elastictranscoder.connect_to_region("us-west-2",aws_access_key_id='AKIAJKADLVELVEBLGGGQ', aws_secret_access_key='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')
+	    params_in = { 'Key': tempname,
+                          'FrameRate': 'auto',
+                          'Resolution': 'auto',
+                          'AspectRatio': 'auto',
+                          'Interlaced': 'auto',
+                          'Container': 'auto',}
+
+            params_out =  { 'Key': filename,
+        	'ThumbnailPattern': '',
+        	'Rotate': 'auto',
+        	'PresetId': '1351620000001-000061',
+    	    }
+	    transcode.create_job(pipeline_id='1394638986818-y3ixy5', input_name=params_in, output=params_out)
+	    default_storage.delete(tempname)
+            return HttpResponseRedirect(reverse('twittube.views.index'))
             return HttpResponseRedirect('/%s/' %sponsor_id)
         else:
             return HttpResponse("upload forminvalid")
