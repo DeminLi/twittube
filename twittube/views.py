@@ -32,7 +32,7 @@ def handlefile(request):
             s.filename = filename
             s.save()
             originalname=request.FILES['file'].name
-            tempname = "temp."+originalname.split(',')[-1]
+            tempname = "temp."+originalname.split('.')[-1]
             default_storage.save(tempname, request.FILES['file'])
             transcode = boto.elastictranscoder.connect_to_region("us-west-2",aws_access_key_id='AKIAJKADLVELVEBLGGGQ', aws_secret_access_key='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')
 	    params_in = { 'Key': tempname,
