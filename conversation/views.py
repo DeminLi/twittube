@@ -53,7 +53,6 @@ def handlefile(request, sponsor_id):
         	'PresetId': '1351620000001-000061',
     	    }
 	    transcode.create_job(pipeline_id='1394638986818-y3ixy5', input_name=params_in, output=params_out)
-	    #default_storage.delete(tempname)
             return HttpResponseRedirect('/%s/' %sponsor_id)
         else:
             return HttpResponse("upload forminvalid")
