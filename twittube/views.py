@@ -36,10 +36,10 @@ def handlefile(request):
             transcode = boto.elastictranscoder.connect_to_region("us-west-2",aws_access_key_id='AKIAJKADLVELVEBLGGGQ', aws_secret_access_key='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')
 	     params_in = { 'Key': originalname, 'FrameRate': 'auto', 'Resolution': 'auto', 'AspectRatio': 'auto', 'Interlaced': 'auto', 'Container': 'auto',}
 
-            params_out =  { 'Key':  filename,
+            params_out =  { 'Key': filename,
         	'ThumbnailPattern': '',
-        	'Rotate':           'auto',
-        	'PresetId':         '1351620000001-000061',
+        	'Rotate': 'auto',
+        	'PresetId': '1351620000001-000061',
     	     }
 	     transcode.create_job(pipeline_id='assignment1', input_name=params_in, output=params_out)
             return HttpResponseRedirect(reverse('twittube.views.index'))
