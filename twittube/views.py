@@ -48,7 +48,7 @@ def handlefile(request):
         	'PresetId': '1351620000001-000061',
     	    }
 	    transcode.create_job(pipeline_id='1394638986818-y3ixy5', input_name=params_in, output=params_out)
-	    default_storage.delete(tempname)
+	    #default_storage.delete(tempname)
             return HttpResponseRedirect(reverse('twittube.views.index'))
         else:
             return HttpResponse("upload form invalid")
