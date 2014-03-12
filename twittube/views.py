@@ -45,7 +45,7 @@ def handlefile(request):
         	'Rotate': 'auto',
         	'PresetId': '1351620000001-000061',
     	    }
-	    transcode.create_job(pipeline_id='assignment1', input_name=params_in, output=params_out)
+	    transcode.create_job(pipeline_id='1394638986818-y3ixy5', input_name=params_in, output=params_out)
             return HttpResponseRedirect(reverse('twittube.views.index'))
         else:
             return HttpResponse("upload form invalid")
