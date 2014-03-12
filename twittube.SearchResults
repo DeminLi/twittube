@@ -1,32 +1,5 @@
----- homepage Matches (28 in 6 files) ----
-Cookbook.html (f:\osc\cookbooks\templates\cookbooks):{% extends "homepage/index.html" %} 
-Index.html (f:\osc\homepage\templates\homepage):{% block title %} OSC Homepage
-Index.html (f:\osc\homepage\templates\homepage):    <link href="{% static 'homepage/css/bootstrap.css'%}" rel="stylesheet" />
-Index.html (f:\osc\homepage\templates\homepage):	<link href="{% static 'homepage/mycss.css' %}" rel="stylesheet">
-Index.html (f:\osc\homepage\templates\homepage):          <a class="navbar-brand" href="{% url 'homepage:index' %}">OSC</a>
-Index.html (f:\osc\homepage\templates\homepage):          <img alt="First slide" src="{% static 'homepage/img/cbg2.jpg' %}">
-Index.html (f:\osc\homepage\templates\homepage):          <img alt="Second slide" src="{% static 'homepage/img/cbg1.jpg' %}">
-Index.html (f:\osc\homepage\templates\homepage):          <img alt="Third slide" src="{% static 'homepage/img/cbg3.jpg' %}">
-Index.html (f:\osc\homepage\templates\homepage):			<img class="img-rounded img-cb" src="{% static 'homepage/img/c1.jpg' %}">
-Index.html (f:\osc\homepage\templates\homepage):			<img class="img-rounded img-cb" src="{% static 'homepage/img/c2.jpg' %}">
-Index.html (f:\osc\homepage\templates\homepage):			<img class="img-rounded img-cb" src="{% static 'homepage/img/c3.jpg' %}">
-Index.html (f:\osc\homepage\templates\homepage):			<img class="img-rounded img-mp" src="{% static 'homepage/img/m1.jpg' %}">
-Index.html (f:\osc\homepage\templates\homepage):			<img class="img-rounded img-mp" src="{% static 'homepage/img/m2.jpg' %}">
-Index.html (f:\osc\homepage\templates\homepage):			<img class="img-rounded img-mp" src="{% static 'homepage/img/m3.jpg' %}">
-Index.html (f:\osc\homepage\templates\homepage):			<img class="img-rounded img-mp" src="{% static 'homepage/img/r1.jpg' %}">
-Index.html (f:\osc\homepage\templates\homepage):			<img class="img-rounded img-mp" src="{% static 'homepage/img/r2.jpg' %}">
-Index.html (f:\osc\homepage\templates\homepage):			<img class="img-rounded img-mp" src="{% static 'homepage/img/r3.jpg' %}">
-Index.html (f:\osc\homepage\templates\homepage):    <script src="{% static 'homepage/js/bootstrap.js' %}"></script>
-Settings.py (twittube):    'homepage',
-Urls.py (homepage):from homepage import views
-Urls.py (homepage):urlpatterns = patterns('homepage.views',
-Views.py (homepage):from homepage.models import Sponsor
-Views.py (homepage):from homepage.models import Participant
-Views.py (homepage):    return render(request, 'homepage/index.html', {'all_s':all_sponsors})
-Views.py (homepage):            return HttpResponseRedirect(reverse('homepage.views.index'))
-Views.py (twittube):from homepage.models import Participant
-Views.py (twittube):    return render(request, 'homepage/index.html', {'all_s':all_sponsors})
-Views.py (twittube):            return HttpResponseRedirect(reverse('homepage.views.index'))
+---- homepage Matches (1 in 1 files) ----
+Urls.py (conversation):urlpatterns = patterns('homepage.views',
 ---- homepage Search Errors Encountered (2) ----
 The following 2 files could not be processed:
 F:\twittube\twittube.IAB : File could not be opened.

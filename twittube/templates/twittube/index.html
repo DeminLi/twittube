@@ -6,6 +6,15 @@
     <meta name="description" content="">
     <meta name="author" content="">    
 
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
     <title>
 	Twittube
     </title>
@@ -21,15 +30,30 @@
   </head>
 
   <body style="">
-    <form action='/handlefile/' method="POST" enctype="multipart/form-data">
+    <form class="navbar-form navbar-left" action='/handlefile/' method="POST" enctype="multipart/form-data">
       {% csrf_token %}
-  	  <input type="file" name="file" /><br/>
-	  <input type="submit" value="upload file" />
+      <div class="form-group">
+  	  	<input type="file" class="form-control" name="file" /><br/>
+  	  </div>
+	  	<button type="submit" class="btn btn-default">Upload</button>
     </form>
     {% for s in all_s %}
         <video name='demo' controls width='20%' height='15%'>
 		<source src="http://d2crtr3mlev64q.cloudfront.net/{{s.filename}}" type="video/mp4"></source>
 		</video>
 		<li><a href="/{{s.id}}/">more</a></li>
+
+		<div class="row">
+ 			<div class="col-sm-6 col-md-4">
+   				<div class="thumbnail">
+   			  		<div class="caption">
+   			 	  		<p><a href="/{{s.id}}/" class="btn btn-primary" role="button">Full Conversation </a> </p>
+   			   		</div>
+    				<video name='demo' controls width='20%' height='15%'>
+					<source src="http://d2crtr3mlev64q.cloudfront.net/{{s.filename}}" type="video/mp4"></source>
+					</video>
+				</div>
+			</div> 		    
+		</div>
     {% endfor %} 
 </body></html>
