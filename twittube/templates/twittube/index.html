@@ -45,14 +45,14 @@
   </div>
   <div class="container">
     <div class="jumbotron">
-        <h1>Create Your Conversation</h1>
+        <h3>Create Your Conversation</h3>
        <div class="row">
          <form class="navbar-form navbar-left" action='/handlefile/' method="POST" enctype="multipart/form-data">
          {% csrf_token %}
          	<div class="form-group">
   	  		<input type="file" class="form-control" name="file" /><br/>
   	  		</div>
-	  		<input type="submit" class="btn btn-default">Upload</button>
+	  		<input type="submit" class="btn btn-default" value="Upload">
     	 </form>
        </div>
    </div>
