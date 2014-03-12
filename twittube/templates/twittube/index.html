@@ -44,8 +44,11 @@
       </div>
   </div>
   <div class="container">
+  <style>
+  .jumbotron { text-align: center;}
+  </style>
     <div class="jumbotron">
-        <h2 text-align='center'>Create Your Conversation</h2>
+        <h2>Create Your Conversation</h2>
        <div class="row">
          <form class="navbar-form navbar-left" action='/handlefile/' method="POST" enctype="multipart/form-data">
          {% csrf_token %}
