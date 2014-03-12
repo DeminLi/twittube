@@ -47,7 +47,7 @@
     <div class="jumbotron">
         <h2  style="text-align:center" >Create Your Conversation</h2>
        <div class="row">
-         <form class="navbar-form navbar-left" action='/handlefile/' method="POST" enctype="multipart/form-data"  style="margin: 0 auto" >
+         <form  class="navbar-form navbar-left col-md-4" action='/handlefile/' method="POST" enctype="multipart/form-data">
          {% csrf_token %}
          	<div class="form-group">
   	  		<input type="file" class="form-control" name="file" /><br/>
