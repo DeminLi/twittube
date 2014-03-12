@@ -5,8 +5,7 @@ from django.core.urlresolvers import reverse
 from django import forms
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
-import boto
-
+import boto.elastictranscoder
 import sys
 sys.path.append( '..' )
 from twittube.models import Sponsor
