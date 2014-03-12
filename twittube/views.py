@@ -31,10 +31,11 @@ def handlefile(request):
             filename = str(s.id)+'_0.mp4'
             s.filename = filename
             s.save()
-            originalname = request.FILES['file'].name
-            default_storage.save(originalname, request.FILES['file'])
+            originalname=request.FILES['file'].name
+            tempname = "temp."+originalname.split(',')[-1]
+            default_storage.save(tempname, request.FILES['file'])
             transcode = boto.elastictranscoder.connect_to_region("us-west-2",aws_access_key_id='AKIAJKADLVELVEBLGGGQ', aws_secret_access_key='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')
-	    params_in = { 'Key': originalname,
+	    params_in = { 'Key': tempname,
                           'FrameRate': 'auto',
                           'Resolution': 'auto',
                           'AspectRatio': 'auto',
@@ -47,6 +48,7 @@ def handlefile(request):
         	'PresetId': '1351620000001-000061',
     	    }
 	    transcode.create_job(pipeline_id='1394638986818-y3ixy5', input_name=params_in, output=params_out)
+	    default_storage.delete(tempname)
             return HttpResponseRedirect(reverse('twittube.views.index'))
         else:
             return HttpResponse("upload form invalid")
