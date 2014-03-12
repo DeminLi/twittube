@@ -30,6 +30,12 @@
   </head>
 
   <body style="">
+  <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="/">Home</a></li>
+        </ul>
+        <h3 class="text-muted">Twittube</h3>
+  </div>
   <div class="row">
     <form class="navbar-form navbar-left" action='/handlefile/' method="POST" enctype="multipart/form-data">
       {% csrf_token %}
