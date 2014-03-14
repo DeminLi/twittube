@@ -1,6 +1,8 @@
----- homepage Matches (1 in 1 files) ----
-Urls.py (conversation):urlpatterns = patterns('homepage.views',
----- homepage Search Errors Encountered (2) ----
+---- csrf Matches (4 in 3 files) ----
+Index.html (conversation\templates\conversation):    				{% csrf_token %}
+Index.html (twittube\templates\twittube):         	{% csrf_token %}
+Settings.py (twittube):    'django.middleware.csrf.CsrfViewMiddleware',
+---- csrf Search Errors Encountered (2) ----
 The following 2 files could not be processed:
 F:\twittube\twittube.IAB : File could not be opened.
 F:\twittube\twittube.IMB : File could not be opened.
