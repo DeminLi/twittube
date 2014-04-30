@@ -76,8 +76,8 @@ MEDIA_URL = ''
 STATIC_ROOT = "os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'static')"
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-AWS_ACCESS_KEY_ID = 'AKIAJKADLVELVEBLGGGQ'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = '********'
+AWS_SECRET_ACCESS_KEY = '*********'
 AWS_STORAGE_BUCKET_NAME = 'elasticbeanstalk-us-west-2-719818129352'
 
 # URL prefix for static files.

@@ -13,7 +13,7 @@ from conversation.models import Participant
 
 def index(request):
     all_sponsors = Sponsor.objects.all()
-    transcode = boto.elastictranscoder.connect_to_region("us-west-2",aws_access_key_id='AKIAJKADLVELVEBLGGGQ', aws_secret_access_key='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')
+    transcode = boto.elastictranscoder.connect_to_region("us-west-2",aws_access_key_id='*******', aws_secret_access_key='********')
     return render(request, 'twittube/index.html', {'all_s':all_sponsors})
     #return HttpResponse("Hello, world. You're at the index.")
 
